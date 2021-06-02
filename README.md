@@ -22,7 +22,7 @@ npm start
 ```
 
 ## Screenshot
-<img src="https://github.com/ongyishen/RNOfficeDocViewerExpo/blob/main/Sample.gif?raw=true" />
+<img src="https://github.com/ongyishen/RNOfficeDocViewerExpo/blob/main/Sample.gif?raw=true" width="200" height="400" />
 
 ## Sample Data Source
 [file-examples.com](https://file-examples.com/)
