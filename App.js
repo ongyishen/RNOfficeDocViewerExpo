@@ -1,44 +1,23 @@
-import { StatusBar } from "expo-status-bar";
+import * as eva from "@eva-design/eva";
+import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
+import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
-import { OfficeViewer } from "@sishuguojixuefu/react-native-office-viewer";
+import { StyleSheet } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
+import { AppNavigator } from "./navigation/AppNavigator";
 
 export default function App() {
-  handlePress = () => {
-    // OpenFile.openDoc(
-    //   [
-    //     {
-    //       url: "https://calibre-ebook.com/downloads/demos/demo.docx",
-    //       fileNameOptional: "test filename",
-    //     },
-    //   ],
-    //   (error, url) => {}
-    // );
-    //https://file-examples.com/index.php/sample-documents-download/
-    //https://github.com/sishuguojixuefu/react-native-office-viewer
-  };
-
   return (
-    <View style={styles.container}>
-      {/* <Text>Open up App.js to start working on your app!</Text> */}
-      {/* <OfficeViewer
-        containerStyle={{ marginTop: 10 }}
-        source="https://file-examples-com.github.io/uploads/2017/02/file_example_XLS_10.xls"
-      /> */}
-      <OfficeViewer
-        containerStyle={{ marginTop: 10 }}
-        source="https://calibre-ebook.com/downloads/demos/demo.docx"
-      />
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.dark}>
+        <SafeAreaProvider>
+          <AppNavigator />
+        </SafeAreaProvider>
+      </ApplicationProvider>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
